@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.stream.Collectors.toList;
+
 public class FibonacciUhr {
 
 
@@ -23,8 +25,8 @@ public class FibonacciUhr {
  }
 
     public void displayColorSequenceForBlocks(ArrayList<Integer> blocksForHours, ArrayList<Integer> blocksForMinutes) {
-     List<Integer> blue = new ArrayList<>(blocksForHours);
-     blue.retainAll(blocksForMinutes); //find common between hours and minutes to color blue
+     List<Integer> blue = new ArrayList<>(blocksForMinutes);
+     blue.retainAll(blocksForHours); //find common between hours and minutes to color blue
 
      List<Integer> red = new ArrayList<>(blocksForHours);
      red.removeAll(blue); // only hours one ---red
